@@ -1,0 +1,1 @@
+An implementation of the merge sort algorithm on std::arrays using templates
