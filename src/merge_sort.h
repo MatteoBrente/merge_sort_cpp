@@ -5,7 +5,7 @@
 #include <tuple>
 
 template<typename T, size_t N>
-std::tuple<std::array<T,(N/2)>, std::array<T,(N-(N/2))>> split (const std::array<T,N> arr) {
+std::tuple<std::array<T,(N/2)>, std::array<T,(N-(N/2))>> split (const std::array<T,N>& arr) {
     //splits an array into 2, then returns a tuple with the 2 arrays as elements
     std::array<T,(N/2)> left_array {};
     std::array<T,(N-(N/2))> right_array {};
@@ -20,7 +20,7 @@ std::tuple<std::array<T,(N/2)>, std::array<T,(N-(N/2))>> split (const std::array
 };
 
 template<typename T, size_t N1, size_t N2>
-std::array<T,(N1+N2)> merge_arrays(std::array<T,N1> left, std::array<T,N2> right) {
+std::array<T,(N1+N2)> merge_arrays(std::array<T,N1>& left, std::array<T,N2>& right) {
     //Takes two arrays and merges them into one, sorting them in the process
     std::array<T,(N1+N2)> merged_list{};
     
@@ -50,7 +50,7 @@ std::array<T,(N1+N2)> merge_arrays(std::array<T,N1> left, std::array<T,N2> right
 };
 
 template <typename T, size_t N>
-std::array<T,N> merge_sort (std::array<T,N> arr) {
+std::array<T,N> merge_sort (std::array<T,N>& arr) {
     //Sorts an array by dividing it into sub-arrays and then merging them back into one
     if (arr.size() < 2)
         return arr;
